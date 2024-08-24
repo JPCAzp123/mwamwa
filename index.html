@@ -130,27 +130,42 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="owl-carousel header-carousel">
-                    <div class="owl-carousel-item position-relative">
+                <div class="slideshow-container" style="width: 100%; height: auto;">
+                    <div class="mySlides fade" style="display: none;  width: 100%; animation-name: fade; animation-duration: 3s;">
                         <img class="img-fluid" src="img/h1.jpg" alt="">
-                        <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0"></h1>
-                        </div>
                     </div>
-                    <div class="owl-carousel-item position-relative">
+                    <div class="mySlides fade" style="display: none; width: 100%; animation-name: fade; animation-duration: 3s;">
                         <img class="img-fluid" src="img/h2.jpg" alt="">
-                        <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0"></h1>
-                        </div>
                     </div>
-                    <div class="owl-carousel-item position-relative">
+                    <div class="mySlides fade" style="display: none; width: 100%; animation-name: fade; animation-duration: 3s;">
                         <img class="img-fluid" src="img/h3.jpg" alt="">
-                        <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0"></h1>
-                        </div>
                     </div>
                 </div>
             </div>
+            
+            <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+                let slides = document.getElementsByClassName("mySlides");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                slides[slideIndex-1].style.display = "block";  
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+            </script>
+            
+            <style>
+            @keyframes fade {
+                from { opacity: .4; }
+                to { opacity: 1; }
+            }
+            </style>
+            
         </div>
     </div>
     <!-- Header End -->
